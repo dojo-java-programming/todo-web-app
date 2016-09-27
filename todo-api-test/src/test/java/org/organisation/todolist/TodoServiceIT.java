@@ -10,6 +10,7 @@ import org.organisation.todolist.domain.Todo;
 
 public class TodoServiceIT {
 	private String baseUri = "http://localhost:8080/api/v1.0";
+//	private String baseUri = "http://localhost:9080/api/v1.0";
 
 	@Test
 	public void getAll() throws Exception {
@@ -32,7 +33,7 @@ public class TodoServiceIT {
 		.then()
 			.statusCode(200)
 			.contentType(MediaType.APPLICATION_JSON)
-			.body("id", equalTo("1"), 
+			.body("id", equalTo(Integer.valueOf(2)),
 					"title", equalTo("Read 'The Clean Coder: A Code of Conduct for Professional Programmers'"));
 	}
 
@@ -40,11 +41,12 @@ public class TodoServiceIT {
 	public void add() throws Exception {
 		given()
 			.contentType(MediaType.APPLICATION_JSON)
+//			.body(asJson(new Todo(10, "Read Refactoring")))
 			.body(new Todo(10, "Read Refactoring"))
 		.when()
 			.post(baseUri + "/todos")
 		.then()
-			.statusCode(200)
+			.statusCode(201)
 			.log();
 
 		given()
@@ -53,7 +55,7 @@ public class TodoServiceIT {
 		.then()
 			.statusCode(200)
 			.contentType(MediaType.APPLICATION_JSON)
-			.body("id", equalTo("10"));
+			.body("id", equalTo(Integer.valueOf(10)));
 	}
 
 //	@Test
@@ -64,10 +66,30 @@ public class TodoServiceIT {
 //		.then()
 //			.body();
 //	}
-//
-//	@Test
-//	public void remove() throws Exception {
-//		
-//	}
+
+	@Test
+	public void remove() throws Exception {
+		given()
+		.when()
+			.delete(baseUri + "/todos/1")
+		.then()
+			.statusCode(200);
+	}
+
+	public StringBuilder asJson(final Todo todo) {
+		StringBuilder bldr = new StringBuilder();
+		append(bldr, "{");
+		append(bldr, "    \"id\": \"" + todo.getId() + "\"");
+		append(bldr, "    \"title\": \"" + todo.getTitle() + "\"");
+		if (todo.getDescription() != null) {
+			append(bldr, "    \"description\": \"" + todo.getDescription() + "\"");
+		}
+		append(bldr, "}");
+		return bldr;
+	}
+
+	private void append(final StringBuilder bldr, final String text) {
+		bldr.append(text).append("\n");
+	}
 
 }
