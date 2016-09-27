@@ -18,6 +18,7 @@
 	<modules>
 		<module>todo-rest-api</module>
 		<module>todo-api-test</module>
+		<module>todo-bdd-test</module>
 	</modules>
 
 	<dependencyManagement>
