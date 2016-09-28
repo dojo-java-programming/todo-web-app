@@ -1,2 +1,27 @@
-# To Do List
+`master` [![Build Status](https://travis-ci.org/dojo-java-programming/todo-web-app.svg)](https://travis-ci.org/dojo-java-programming/todo-web-app)
+`add-bdd` [![Build Status](https://travis-ci.org/dojo-java-programming/todo-web-app.svg?branch=add-bdd)](https://travis-ci.org/dojo-java-programming/todo-web-app)
+
+# To Do List - REST API
+
+
+## Jetty
+
+### Running from Jetty in Eclipse
+
+	GET  http://localhost:8080/
+	GET  http://localhost:8080/api/v1.0/todos
+	GET  http://localhost:8080/api/v1.0/todos/2
+	
+	POST  http://localhost:8080/
+	body:
+	{
+		"id": #,
+		"title": "some title",
+		"description": "some description"
+	}
+	
+	DELETE  http://localhost:8080/api/v1.0/todos/2
+
+
+### Running from Jetty in IntelliJ
 
