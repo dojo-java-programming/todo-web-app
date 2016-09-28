@@ -51,11 +51,6 @@
 			<version>3.1.0</version>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-lang3</artifactId>
-			<version>3.4</version>
-		</dependency>
-		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
 			<version>1.7.21</version>
@@ -70,6 +65,11 @@
 			-->
 		</dependency>
 
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>todo-domain</artifactId>
+			<version>${project.version}</version>
+		</dependency>
 
 		<dependency>
 			<groupId>junit</groupId>
