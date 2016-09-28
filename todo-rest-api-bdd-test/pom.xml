@@ -4,10 +4,10 @@
 
 	<parent>
 		<groupId>com.github.dojo-java-programmer.todo-web-app</groupId>
-		<artifactId>todo-parent-pom</artifactId>
+		<artifactId>todo-rest-api-parent-pom</artifactId>
 		<version>0.1.0-SNAPSHOT</version>
 	</parent>
-	<artifactId>todo-bdd-test</artifactId>
+	<artifactId>todo-rest-api-bdd-test</artifactId>
 
 	<dependencies>
 		<dependency>

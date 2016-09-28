@@ -16,6 +16,8 @@
 		"title": "some title",
 		"description": "some description"
 	}
+	
+	DELETE  http://localhost:8080/api/v1.0/todos/2
 
 
 ### Running from Jetty in IntelliJ
