@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.github.dojo-java-programmer.todo-web-app</groupId>
-	<artifactId>todo-parent-pom</artifactId>
+	<artifactId>todo-rest-api-parent-pom</artifactId>
 	<version>0.1.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
@@ -17,7 +17,9 @@
 -->
 	<modules>
 		<module>todo-rest-api</module>
-		<module>todo-api-test</module>
+		<module>todo-rest-api-test</module>
+		<module>todo-rest-api-bdd-test</module>
+		<module>todo-domain</module>
 	</modules>
 
 	<dependencyManagement>
@@ -30,4 +32,21 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+	
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.5.1</version>
+					<configuration>
+						<!-- put your configurations here -->
+						<source>1.7</source>
+						<target>1.7</target>						
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
 </project>
