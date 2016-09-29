@@ -1,5 +1,5 @@
-`master` [![Build Status](https://travis-ci.org/dojo-java-programming/todo-web-app.svg)](https://travis-ci.org/dojo-java-programming/todo-web-app)
-`add-bdd` [![Build Status](https://travis-ci.org/dojo-java-programming/todo-web-app.svg?branch=add-bdd)](https://travis-ci.org/dojo-java-programming/todo-web-app)
+`master` [![Build Status](https://travis-ci.org/dojo-java-programming/todo-web-app.svg?branch=master)](https://travis-ci.org/dojo-java-programming/todo-web-app)
+
 
 # To Do List - REST API
 
