@@ -24,7 +24,7 @@ public class Todo {
 		this.title = titleCln;
 		this.description = StringUtils.trimToNull(description);
 	}
-	public Todo(int id, String title) {
+	public Todo(int id, final String title) {
 		this(id, title, null);
 	}
 
