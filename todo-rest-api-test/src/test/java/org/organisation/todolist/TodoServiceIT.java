@@ -9,8 +9,10 @@ import org.junit.Test;
 import org.organisation.todolist.domain.Todo;
 
 public class TodoServiceIT {
-	private String baseUri = "http://localhost:8080/api/v1.0";
-//	private String baseUri = "http://localhost:9080/api/v1.0";
+    // Eclipse Jetty
+    private String baseUri = "http://localhost:8080/api/v1.0";
+    // IntelliJ Jetty
+    //private String baseUri = "http://localhost:8080/todo-web-app/api/v1.0";	
 
 	@Test
 	public void getAll() throws Exception {
