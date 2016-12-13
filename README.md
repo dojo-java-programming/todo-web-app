@@ -30,7 +30,7 @@
 	GET  http://localhost:8080/todo-rest-api-parent-pom/api/v1.0/todos
 	GET  http://localhost:8080/todo-rest-api-parent-pom/api/v1.0/todos/2
 	
-	POST  http://localhost:8080/todo-rest-api-parent-pom/api/v1.0
+	POST  http://localhost:8080/todo-rest-api-parent-pom/api/v1.0/todos
 	body:
 	{
 		"id": #,
