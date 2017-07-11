@@ -75,6 +75,10 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -82,7 +86,6 @@
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.5.1</version>
 				<inherited>true</inherited>
 				<configuration>
 					<source>1.7</source>
