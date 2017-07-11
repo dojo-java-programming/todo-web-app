@@ -12,10 +12,11 @@ import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Request;
-import javax.ws.rs.core.UriInfo;
+//import javax.ws.rs.core.Request;
+//import javax.ws.rs.core.UriInfo;
 
 import org.organisation.todolist.domain.Todo;
 import org.organisation.todolist.repository.SimpleTodoRepository;
@@ -36,12 +37,14 @@ public class TodoService {
 
 
 	@GET
+	@Produces(MediaType.APPLICATION_JSON)
 	public Collection<Todo> getAll() {
 		logger.info("getAll()");
 		return repo.getAll();
 	}
 
 	@GET
+	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/{id}")
 	public Todo getById(@PathParam("id") long id) {
 		logger.info("getById( " + id + " )");
@@ -50,21 +53,29 @@ public class TodoService {
 		return todo;
 	}
 
-//	@POST
-//	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-//	public void add(@FormParam("id") String idStr,
-//		      @FormParam("title") String title,
-//		      @FormParam("description") String description,
-//		      @Context HttpServletResponse servletResponse) throws IOException {
-//		Todo todo = new Todo();
-//		todo.setId(Long.valueOf(idStr));
-//		todo.setTitle(idStr);
-//		todo.setDescription(description);
-//		repo.add(todo);
-//
-//		servletResponse.setStatus(HttpServletResponse.SC_CREATED);
-//		servletResponse.flushBuffer();
-//	}
+	@POST
+	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/search")
+	public Todo searchById(@FormParam("id") String idStr) {
+		return getById(Long.parseLong(idStr));
+	}
+
+	@POST
+	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+	public void add(@FormParam("id") String idStr,
+		      @FormParam("title") String title,
+		      @FormParam("description") String description,
+		      @Context HttpServletResponse servletResponse) throws IOException {
+		Todo todo = new Todo();
+		todo.setId(Long.valueOf(idStr));
+		todo.setTitle(title);
+		todo.setDescription(description);
+		repo.add(todo);
+
+		servletResponse.setStatus(HttpServletResponse.SC_CREATED);
+		servletResponse.flushBuffer();
+	}
 
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
@@ -83,6 +94,7 @@ public class TodoService {
 	}
 
 	@DELETE
+	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/{id}")
 	public void remove(@PathParam("id") long id, @Context HttpServletResponse servletResponse) throws IOException {
 		repo.remove(id);
