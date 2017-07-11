@@ -6,22 +6,23 @@
 
 ## Jetty
 
+
 ### Running from Jetty in Eclipse
 
-	GET  http://localhost:8080/
-	GET  http://localhost:8080/api/v1.0/todos
-	GET  http://localhost:8080/api/v1.0/todos/2
+	curl  -X GET  http://localhost:8080/
+	curl  -X GET  http://localhost:8080/api/v1.0/todos
+	curl  -X GET  http://localhost:8080/api/v1.0/todos/2
 	
-	POST  http://localhost:8080/api/v1.0/todos
-	body:
-	{
+	curl  -X POST  http://localhost:8080/ -d "{
 		"id": #,
 		"title": "some title",
 		"description": "some description"
-	}
+	}"
 	
-	DELETE  http://localhost:8080/api/v1.0/todos/2
+	curl  -X DELETE  http://localhost:8080/api/v1.0/todos/2
 
+    curl  -X POST  -H "Content-Type=application/x-www-form-urlencoded"  http://localhost:8080/api/v1.0/todos  -d "id=6&title=Read%20Books&description=do-it"
+    
 
 ### Running from Jetty in IntelliJ
 
