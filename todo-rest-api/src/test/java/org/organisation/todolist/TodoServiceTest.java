@@ -76,4 +76,9 @@ public class TodoServiceTest {
 		new TodoService().update();
 	}
 
+	@Test
+	public void remove() throws Exception {
+		new TodoService().remove(2, httpServletResponse);
+	}
+
 }
