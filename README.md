@@ -1,4 +1,5 @@
 `master` [![Build Status](https://travis-ci.org/dojo-java-programming/todo-web-app.svg?branch=master)](https://travis-ci.org/dojo-java-programming/todo-web-app)
+[![codecov.io](https://codecov.io/github/dojo-java-programming/todo-web-app/coverage.svg?branch=master)](https://codecov.io/github/dojo-java-programming/todo-web-app.io?branch=master)
 
 
 # To Do List - REST API
