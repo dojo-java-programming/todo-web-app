@@ -10,7 +10,9 @@ import org.organisation.todolist.domain.Todo;
 
 public class TodoServiceIT {
     // Eclipse Jetty
-    private String baseUri = "http://localhost:8080/api/v1.0";
+	//private String baseUri = "http://localhost:8080/api/v1.0";
+    // Eclipse Tomcat
+    private String baseUri = "http://localhost:8080/todo-rest-api/api/v1.0";
     // IntelliJ Jetty
     //private String baseUri = "http://localhost:8080/todo-rest-api-parent-pom/api/v1.0";	
 
